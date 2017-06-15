@@ -1,0 +1,287 @@
+{% load staticfiles %}
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIL</title>
+	<!-- Bootstrap -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="wrapper">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="containernav">  
+	    <div class="navbar-header">
+		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			    <span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+			    <a class="navbar-brand" href="{% url 'indexoil' %}"><i class="fa fa-tint" aria-hidden="true">
+				&nbsp;OILSTANDART</i></a>
+		</div>
+		    <div class="navbar-collapse collapse right">
+			    <ul class="nav navbar-nav navbar-right">
+				   				
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">О компании<span class="caret"></span></a>
+					    <ul class="dropdown-menu" role="menu">
+						{% url 'history' as url %}
+					        <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">История</a></li>
+						{% url 'reviews' as url %}	
+							<li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Отзывы</a></li>
+						{% url 'benefits' as url %}	
+							<li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Преимущества</a></li>
+					    </ul>
+					</li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Цены<span class="caret"></span></a>
+					    <ul class="dropdown-menu" role="menu">
+						<li><a><b>Зимнее ДТ</b></a></li>
+						
+						    {% url 'winter_0' as url %}
+					        <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Сорт Е-15&deg;С</a></li>
+							{% url 'winter_1' as url %}
+					        <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">ЕВРО-5 Класс 2</a></li>
+							{% url 'winter_2' as url %}
+					        <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">ЕВРО-5 Класс 3</a></li>
+							{% url 'winter_3' as url %}
+					        <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">ТИП 2-26&deg;С</a></li>
+							<li class="divider"></li>
+						<li><a><b>Летнее ДТ</b></a></li>
+						
+						{% url 'summer_0' as url %}	
+							<li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">ЕВРО-5 Сорт С</a></li>
+						{% url 'summer_1' as url %}	
+							<li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">ЕВРО-3 Сорт С</a></li>
+                        <li class="divider"></li>							
+						<li><a><b>Бензин</b></a></li>
+						
+						{% url 'petrol_0' as url %}	
+							<li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Бензин АИ-92</a></li>
+						{% url 'petrol_1' as url %}	
+							<li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Бензин АИ-95</a></li>	
+						<li class="divider"></li>
+						<li><a><b>Керосин ДТ</b></a></li>
+						
+						{% url 'kerosene_0' as url %}
+					        <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">КТ-1</a></li>
+						{% url 'kerosene_1' as url %}
+					        <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">ТС-1</a></li>	
+						<li class="divider"></li>
+						<li><a><b>СМТ</b></a></li>
+						
+						{% url 'smt_0' as url %}
+					        <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">ДГК</a></li>
+						{% url 'smt_1' as url %}
+					        <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">ДГТ ВИД-2</a></li>							
+					    </ul>
+					</li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Услуги<span class="caret"></span></a>
+					    <ul class="dropdown-menu" role="menu">
+						{% url 'saleoffuel' as url %}
+					        <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Продажа топлива</a></li>
+						{% url 'transportationoffuel' as url %}	
+							<li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Перевозка топлива</a></li>
+						{% url 'fuelpumping' as url %}	
+							<li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Откачка топлива</a></li>
+						{% url 'fuelutilization' as url %}
+					        <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Утилизация топлива</a></li>
+                        {% url 'rentofcontainers' as url %}
+					        <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Аренда емкотей</a></li>
+                        {% url 'gasolinetankerrental' as url %}
+					        <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Аренда бензовозов</a></li> 
+                        {% url 'miniazs' as url %}
+					        <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Мини АЗС</a></li>							
+					    </ul>
+					</li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Инфо<span class="caret"></span></a>
+					    <ul class="dropdown-menu" role="menu">
+						{% url 'oilstoragedepot' as url %}
+					        <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Нефтебаза</a></li>
+						{% url 'cooperation' as url %}	
+							<li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Сотрудничество</a></li>
+					   	{% url 'queandanswers' as url %}
+					        <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Вопросы и ответы</a></li>
+						<li class="divider"></li>	
+                         <li><a><b>Документы</b></a></li>	
+						{% url 'qualitypassportdt' as url %}	
+						     <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Паспорт качества-ДТ</a></li>
+						{% url 'qualitypassportai' as url %}	
+						     <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Паспорт качества-АИ</a></li>							
+					    </ul>
+					</li>
+					{% url 'contacts' as url %}
+				    <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Контакты</a></li>
+					</li>
+				</ul>
+			
+			</div>
+    </div>
+</div>	
+<!-- Модальное окно. Начало -->
+<button type="button" class="btn btn-success btn-lg top-menu" data-toggle="modal" data-target="#myModal">
+    <i class="glyphicon glyphicon-phone-alt" aria-hidden="true"></i>&nbsp;<span class="color-menu">Обратный звонок</span>
+</button>
+ 
+
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+
+       
+        <div class="modal-body">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+<!-- Form itself -->
+<form name="sentMessage" class="form form-register1" id="contactForm"  novalidate>
+
+<div class="control-group">
+<div class="controls">
+<input type="text" class="form-control" onblur='if(this.value=="") this.placeholder="Ваше имя"' onfocus='if(this.value=="Ваше имя") this.value=""' placeholder="Ваше имя" id="name" required data-validation-required-message="Пожалуйста укажите ваше имя" />
+  <p class="help-block"></p>
+</div>
+</div>  
+<div class="control-group">
+<div class="controls">
+<input type="text" class="form-control" onblur='if(this.value=="") this.placeholder="Телефон"' onfocus='if(this.value=="Телефон") this.value=""' placeholder="Телефон" id="phone" required data-validation-required-message="Пожалуйста, укажите номер телефона" />
+</div>
+   </div>  
+
+
+<div id="success"> </div><br> <!-- For success/fail messages -->
+   <button type="submit" class="btn btn-lg btn-3d pull-right">Отправить</button><br />
+
+</form>
+
+        </div><!-- End of Modal body -->
+        </div><!-- End of Modal content -->
+        </div><!-- End of Modal dialog -->
+    </div><!-- Модальное окно. Конец -->
+
+    
+                {% block content %}
+                {% endblock %}
+		   
+
+<div class="push"></div>	   
+</div>
+<div id="f" class="container centered">
+	<div class="row">
+		<div class="col-lg-12 centered">
+			<div class="footer-inner">
+		
+		 <div class="container">
+					    <div class="row centered">
+						    <div class="col-lg-3 fontLeft">
+		                        <i>О компании:</i><br>
+					   
+						{% url 'history' as url %}
+					        <a href="{{url}}">История</a><br>
+						{% url 'reviews' as url %}	
+							<a href="{{url}}">Отзывы</a><br>
+						{% url 'benefits' as url %}	
+							<a href="{{url}}">Преимущества</a>
+					 <br>
+		                    </div>
+							<div class="col-lg-3 fontLeft">
+		                        <i>Цены:</i><br>
+					   
+						{% url 'winter' as url %}
+					        <a href="{{url}}">Зимнее ДТ</a><br>
+						{% url 'summer' as url %}	
+							<a href="{{url}}">Летнее ДТ</a><br>
+						{% url 'petrol' as url %}	
+							<a href="{{url}}">Бензин</a><br>
+						{% url 'kerosene' as url %}
+					       <a href="{{url}}">Керосин</a><br>
+                        {% url 'smt' as url %}
+					        <a href="{{url}}">СМТ</a>					
+					 <br>
+		                    </div>
+							<div class="col-lg-3 fontLeft">
+		                        <i>Услуги:</i><br>
+					   
+						{% url 'saleoffuel' as url %}
+					        <a href="{{url}}">Продажа топлива</a><br>
+						{% url 'transportationoffuel' as url %}	
+							<a href="{{url}}">Перевозка топлива</a><br>
+						{% url 'fuelpumping' as url %}	
+							<a href="{{url}}">Откачка топлива</a><br>
+						{% url 'fuelutilization' as url %}
+					       <a href="{{url}}">Утилизация топлива</a><br>
+                        {% url 'rentofcontainers' as url %}
+					       <a href="{{url}}">Аренда емкотей</a><br>
+                        {% url 'gasolinetankerrental' as url %}
+					        <a href="{{url}}">Аренда бензовозов</a><br>
+                        {% url 'miniazs' as url %}
+					        <a href="{{url}}">Мини АЗС</a>				
+					 <br>
+		                    </div>
+							<div class="col-lg-3 fontLeft">
+		                        <i>О компании:</i><br>
+					   
+						{% url 'history' as url %}
+					        <a href="{{url}}">История</a><br>
+						{% url 'reviews' as url %}	
+							<a href="{{url}}">Отзывы</a><br>
+						{% url 'benefits' as url %}	
+							<a href="{{url}}">Преимущества</a>
+					 <br>
+		                    </div> 							
+		                </div>
+						<hr class="style-one"></hr>
+		</div>
+		   
+		<div class="container">
+					    <div class="row centered">
+						    <div class="col-lg-3">
+		                        <i class="fa fa-handshake-o" aria-hidden="true">&nbsp;Предложения для сотрудничества:<br><br>
+								<em class="wfoo">&#9993; oil@gmail.com<br><br>
+								&#9990; +380734444444<br><br>
+								&#9742; +380733333333</em>
+							</i>
+		                    </div>
+							<div class="col-lg-3">
+		                        
+		                    </div>
+							<div class="col-lg-3">
+							    
+		                    </div>
+                            <div class="col-lg-3">
+							    <i class="fa fa-envelope-open-o" aria-hidden="true">&nbsp;Юридический адрес:<br><br>
+								<em class="wfoo">&#9745; г.Киев, бул. Лепса 8Б , офис 105</em>
+								</i>
+		                    </div> 							
+		                </div>
+						<hr class="style-one"></hr>
+		</div>	
+		                    <div class="col-lg-4">
+		                         <em>ооо "оилстандарт"</em> 
+		                    </div>
+							<div class="col-lg-4">
+							     <a href="#"><i class="fa fa-twitter"></i></a>
+			                     <a href="#"><i class="fa fa-facebook"></i></a>
+			                     <a href="#"><i class="fa fa-vk"></i></a>  
+		                    </div>
+                            <div class="col-lg-4">
+							     <em>Все права защищены &#169; 2017</em>  
+		                    </div> 		
+		    
+		   </div>
+	   </div>
+    </div>
+</div>
+         
+	
+<script  src="{% static 'scripts/jquery-3.2.1.min.js' %}"></script>	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="{% static 'scripts/bootstrap.min.js' %}"></script>
+<script src="{% static 'scripts/jqBootstrapValidation.js' %}"></script>
+<script  src="{% static 'scripts/recall_me.js' %}"></script>
+<script  src="{% static 'scripts/recall_me.php' %}"></script>
+</body>
+</html>
