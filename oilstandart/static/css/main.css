@@ -175,13 +175,8 @@ margin-right: 15px;
 clear: both;
 height: 80%;
 }
-#f {
-height: 500px;
+.f {
 background: #2d2d2d;
-padding-top: 30px;
-margin-bottom: 0px;
-width: 100%;
-padding: 0px;
 }
 
 .wrapper{
@@ -194,12 +189,12 @@ padding: 0px;
 }
 
 
-#f i {
+.f i {
 color: #bdbdbd;
 font-size: 24px;
 padding: 30px;
 }
-#f i:hover {
+.f i:hover {
 color: #ff7878;
 }
 .knopkaPost {
@@ -604,8 +599,8 @@ color: white;
 background: white;
 }
 
-.fontLeft {
-text-align: left;
+.fontcenter {
+text-align: center;
 }
 .techworkphoto {
 top: 20px;
@@ -795,8 +790,15 @@ margin-left: 0px;
 color: #ff7878;
 }
 em.wfoo {
+display: block;
 color: white;
 font-size: 16px;
+text-align: left;
+margin-top: -45px;
+margin-left: 50px;
+}
+.contactsLeft {
+text-align: left;
 }
 
 .tiltFont1 {

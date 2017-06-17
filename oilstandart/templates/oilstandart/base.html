@@ -169,14 +169,14 @@
 
 <div class="push"></div>	   
 </div>
-<div id="f" class="container centered">
-	<div class="row">
+
+	<div class="row f">
 		<div class="col-lg-12 centered">
 			<div class="footer-inner">
 		
-		 <div class="container">
+		
 					    <div class="row centered">
-						    <div class="col-lg-3 fontLeft">
+						    <div class="col-lg-3 col-sm-3 fontcenter">
 		                        <i>О компании:</i><br>
 					   
 						{% url 'history' as url %}
@@ -187,7 +187,7 @@
 							<a href="{{url}}">Преимущества</a>
 					 <br>
 		                    </div>
-							<div class="col-lg-3 fontLeft">
+							<div class="col-lg-3 col-sm-3 fontLeft">
 		                        <i>Цены:</i><br>
 					   
 						{% url 'winter' as url %}
@@ -202,7 +202,7 @@
 					        <a href="{{url}}">СМТ</a>					
 					 <br>
 		                    </div>
-							<div class="col-lg-3 fontLeft">
+							<div class="col-lg-3 col-sm-3 fontLeft">
 		                        <i>Услуги:</i><br>
 					   
 						{% url 'saleoffuel' as url %}
@@ -221,7 +221,7 @@
 					        <a href="{{url}}">Мини АЗС</a>				
 					 <br>
 		                    </div>
-							<div class="col-lg-3 fontLeft">
+							<div class="col-lg-3 col-sm-3 fontLeft">
 		                        <i>О компании:</i><br>
 					   
 						{% url 'history' as url %}
@@ -234,49 +234,59 @@
 		                    </div> 							
 		                </div>
 						<hr class="style-one"></hr>
-		</div>
-		   
+		
 		<div class="container">
 					    <div class="row centered">
-						    <div class="col-lg-3">
-		                        <i class="fa fa-handshake-o" aria-hidden="true">&nbsp;Предложения для сотрудничества:<br><br>
-								<em class="wfoo">&#9993; oil@gmail.com<br><br>
-								&#9990; +380734444444<br><br>
+						    <div class="col-lg-3 contactLeft">
+		                        <i class="fa fa-handshake-o" aria-hidden="true">&nbsp;Предложения для сотрудничества:<br><br></i>
+								<em class="wfoo">&#9993; oil@gmail.com<br>
+								&#9990; +380734444444<br>
 								&#9742; +380733333333</em>
-							</i>
+							
 		                    </div>
 							<div class="col-lg-3">
 		                        
 		                    </div>
 							<div class="col-lg-3">
+							 							 
+		                    </div>
+                            <div class="col-lg-3 contactLeft">
 							    
+							  <i class="fa fa-envelope-open-o" aria-hidden="true">&nbsp;Юридический адрес:<br><br></i>
+                              <em class="wfoo">&#9745; г.Киев, бул. Лепса 8Б , офис 105</em>
+								
 		                    </div>
-                            <div class="col-lg-3">
-							    <i class="fa fa-envelope-open-o" aria-hidden="true">&nbsp;Юридический адрес:<br><br>
-								<em class="wfoo">&#9745; г.Киев, бул. Лепса 8Б , офис 105</em>
-								</i>
-		                    </div> 							
-		                </div>
-						<hr class="style-one"></hr>
-		</div>	
-		                    <div class="col-lg-4">
-		                         <em>ооо "оилстандарт"</em> 
-		                    </div>
-							<div class="col-lg-4">
+
+							<hr class="style-one"></hr><br>
+				 <div class="row centered">				
+							<div class="col-lg-12">
 							     <a href="#"><i class="fa fa-twitter"></i></a>
 			                     <a href="#"><i class="fa fa-facebook"></i></a>
 			                     <a href="#"><i class="fa fa-vk"></i></a>  
 		                    </div>
-                            <div class="col-lg-4">
+                 </div> 
+				 <hr class="style-one"></hr>
+                  <div class="row centered">		
+						<div class="col-lg-4">
+		                         <em>ооо "оилстандарт"</em> 
+		                </div>
+						<div class="col-lg-4">
+						</div>
+						<div class="col-lg-4">
 							     <em>Все права защищены &#169; 2017</em>  
-		                    </div> 		
+		                 </div> 
+				</div>				 
+ 							
+		                </div>
+						
+		</div>	
+		                    
+       						
 		    
 		   </div>
 	   </div>
     </div>
-</div>
-         
-	
+
 <script  src="{% static 'scripts/jquery-3.2.1.min.js' %}"></script>	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="{% static 'scripts/bootstrap.min.js' %}"></script>
