@@ -1,111 +1,135 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.core.mail import send_mail, BadHeaderError
-from django import forms
+from django import *
+from .models import *
 from django.http import Http404
 
-company_name = "«oilstandart»"
+company_name = "ООО “Баррель-Украина”"
 
 
 def indexoil(reguest):
-    return render(reguest, 'oilstandart/indexoil.html', {'company_name': company_name})
-	
-def benefits(reguest): 
-    return render(reguest, 'oilstandart/benefits.html', {'company_name': company_name})
-
-def fonnumber(reguest): 
-    return render(reguest, 'oilstandart/fonnumber.html')
-
-def history(reguest): 
-    return render(reguest, 'oilstandart/history.html', {'company_name': company_name})
-
-def kerosene_0(reguest): 
-    return render(reguest, 'oilstandart/kerosene_0.html')
-
-def kerosene_1(reguest): 
-    return render(reguest, 'oilstandart/kerosene_1.html')	
-
-def petrol_0(reguest): 
-    return render(reguest, 'oilstandart/petrol_0.html')
-
-def petrol_1(reguest): 
-    return render(reguest, 'oilstandart/petrol_1.html')	
-
-def reviews(reguest):
-    return render(reguest, 'oilstandart/reviews.html', {'company_name': company_name})
-
-def smt_0(reguest): 
-    return render(reguest, 'oilstandart/smt_0.html')
-
-def smt_1(reguest): 
-    return render(reguest, 'oilstandart/smt_1.html')	
-
-def summer_0(reguest): 
-    return render(reguest, 'oilstandart/summer_0.html')
-
-def summer_1(reguest): 
-    return render(reguest, 'oilstandart/summer_1.html')	
-
-def winter_0(reguest): 
-    return render(reguest, 'oilstandart/winter_0.html')
-
-def winter_1(reguest): 
-    return render(reguest, 'oilstandart/winter_1.html')
-
-def winter_2(reguest): 
-    return render(reguest, 'oilstandart/winter_2.html')
-
-def winter_3(reguest): 
-    return render(reguest, 'oilstandart/winter_3.html')	
-	
-def saleoffuel(reguest): 
-    return render(reguest, 'oilstandart/saleoffuel.html')
-	
-def transportationoffuel(reguest): 
-    return render(reguest, 'oilstandart/transportationoffuel.html')
-
-def fuelpumping(reguest): 
-    return render(reguest, 'oilstandart/fuelpumping.html')
-
-def fuelutilization(reguest): 
-    return render(reguest, 'oilstandart/fuelutilization.html')
-
-def rentofcontainers(reguest): 
-    return render(reguest, 'oilstandart/rentofcontainers.html')
-
-def gasolinetankerrental(reguest): 
-    return render(reguest, 'oilstandart/gasolinetankerrental.html')
-
-def miniazs(reguest): 
-    return render(reguest, 'oilstandart/miniazs.html')
-
-def oilstoragedepot(reguest): 
-    return render(reguest, 'oilstandart/oilstoragedepot.html')
-
-def cooperation(reguest): 
-    return render(reguest, 'oilstandart/cooperation.html')
-
-def queandanswers(reguest): 
-    return render(reguest, 'oilstandart/queandanswers.html')
+    price_oil = Price.objects.filter(published_date__lte=timezone.now())
+    return render(reguest, 'oilstandart/indexoil.html', {'company_name': company_name, 'price_oil': price_oil})
 
 def contacts(reguest): 
-    return render(reguest, 'oilstandart/contacts.html')
+    return render(reguest, 'oilstandart/contacts.html', {'company_name': company_name})
 
-def qualitypassportdt(reguest): 
-    return render(reguest, 'oilstandart/qualitypassportdt.html')
+def certificates(reguest): 
+    return render(reguest, 'oilstandart/certificates.html',)        
 
-def qualitypassportai(reguest): 
-    return render(reguest, 'oilstandart/qualitypassportai.html')
+def dieselfuel(reguest): 
+     return render(reguest, 'oilstandart/dieselfuel.html', {'company_name': company_name})
+
+def rent(reguest): 
+     return render(reguest, 'oilstandart/rent.html', {'company_name': company_name}) 
+
+def gasfilling(reguest): 
+     return render(reguest, 'oilstandart/gasfilling.html', {'company_name': company_name})  
+
+def realization(reguest): 
+     return render(reguest, 'oilstandart/realization.html', {'company_name': company_name})
+
+def techwork(reguest): 
+     return render(reguest, 'oilstandart/techwork.html', {'company_name': company_name})
+             
+def contactView(reguest): 
+     return render(reguest, 'oilstandart/contactView.html', {'company_name': company_name})
+
+# def fonnumber(reguest): 
+#     return render(reguest, 'oilstandart/fonnumber.html')
+
+# def history(reguest): 
+#     return render(reguest, 'oilstandart/history.html', {'company_name': company_name})
+
+# def kerosene_0(reguest): 
+#     return render(reguest, 'oilstandart/kerosene_0.html')
+
+# def kerosene_1(reguest): 
+#     return render(reguest, 'oilstandart/kerosene_1.html')	
+
+# def petrol_0(reguest): 
+#     return render(reguest, 'oilstandart/petrol_0.html')
+
+# def petrol_1(reguest): 
+#     return render(reguest, 'oilstandart/petrol_1.html')	
+
+# def reviews(reguest):
+#     return render(reguest, 'oilstandart/reviews.html', {'company_name': company_name})
+
+# def smt_0(reguest): 
+#     return render(reguest, 'oilstandart/smt_0.html')
+
+# def smt_1(reguest): 
+#     return render(reguest, 'oilstandart/smt_1.html')	
+
+# def summer_0(reguest): 
+#     return render(reguest, 'oilstandart/summer_0.html')
+
+# def summer_1(reguest): 
+#     return render(reguest, 'oilstandart/summer_1.html')	
+
+# def winter_0(reguest): 
+#     return render(reguest, 'oilstandart/winter_0.html')
+
+# def winter_1(reguest): 
+#     return render(reguest, 'oilstandart/winter_1.html')
+
+# def winter_2(reguest): 
+#     return render(reguest, 'oilstandart/winter_2.html')
+
+# def winter_3(reguest): 
+#     return render(reguest, 'oilstandart/winter_3.html')	
+	
+# def saleoffuel(reguest): 
+#     return render(reguest, 'oilstandart/saleoffuel.html')
+	
+# def transportationoffuel(reguest): 
+#     return render(reguest, 'oilstandart/transportationoffuel.html')
+
+# def fuelpumping(reguest): 
+#     return render(reguest, 'oilstandart/fuelpumping.html')
+
+# def fuelutilization(reguest): 
+#     return render(reguest, 'oilstandart/fuelutilization.html')
+
+# def rentofcontainers(reguest): 
+#     return render(reguest, 'oilstandart/rentofcontainers.html')
+
+# def gasolinetankerrental(reguest): 
+#     return render(reguest, 'oilstandart/gasolinetankerrental.html')
+
+# def miniazs(reguest): 
+#     return render(reguest, 'oilstandart/miniazs.html')
+
+# def oilstoragedepot(reguest): 
+#     return render(reguest, 'oilstandart/oilstoragedepot.html')
+
+# def cooperation(reguest): 
+#     return render(reguest, 'oilstandart/cooperation.html')
+
+# def queandanswers(reguest): 
+#     return render(reguest, 'oilstandart/queandanswers.html')
+
+# def qualitypassportdt(reguest): 
+#     return render(reguest, 'oilstandart/qualitypassportdt.html')
+
+# def qualitypassportai(reguest): 
+#     return render(reguest, 'oilstandart/qualitypassportai.html')
 
 
 #Контактная форма для отправки сообщения		
 class ContactForm(forms.Form):
-	subject = forms.CharField(max_length=100,widget=forms.TextInput(attrs={'size':'40','class': 'form-control'}))#Заполняем в скобках, чтобы тема работала в бутрстраповских стилях
-	subject1 = forms.CharField(max_length=100,widget=forms.TextInput(attrs={'size':'40','class': 'form-control'}))
-	subject2 = forms.CharField(max_length=100,widget=forms.TextInput(attrs={'size':'40','class': 'form-control'}))
-	sender = forms.EmailField(widget=forms.TextInput(attrs={'size':'40','class': 'form-control'}))#Заполняем в скобках, чтобы тема работала в бутрстраповских стилях
-	message = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}))#Заполняем в скобках, чтобы тема работала в бутрстраповских стилях
-	copy = forms.BooleanField(required = False)
+    FAVORITE_COLORS_CHOICES = (('.....', '.....'),
+                            ('ДТ Летнее ЕВРО-5', 'ДТ Летнее ЕВРО-5'),
+                            ('ДГК', 'ДГК'),
+                            ('ДГК ВИД 2', 'ДГК ВИД 2'))
+    subject = forms.ChoiceField(required=True,widget=forms.Select(attrs={'class': 'form-control'}), choices=FAVORITE_COLORS_CHOICES) # Выбираем вид топлива
+    subject1 = forms.CharField(max_length=100,widget=forms.TextInput(attrs={'size':'40','class': 'form-control'}))
+    subject2 = forms.CharField(max_length=100,widget=forms.TextInput(attrs={'size':'40','class': 'form-control'}))
+    sender = forms.EmailField(widget=forms.TextInput(attrs={'size':'40','class': 'form-control'}))#Заполняем в скобках, чтобы тема работала в бутрстраповских стилях
+    message = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}))#Заполняем в скобках, чтобы тема работала в бутрстраповских стилях
+    copy = forms.BooleanField(required = False)
 
 	
 def contactView(request):
@@ -120,12 +144,12 @@ def contactView(request):
 			message = form.cleaned_data['message']
 			copy = form.cleaned_data['copy']
             
-			recipients = ['vanguar@ukr.net']
+			recipients = ['tzvanguardia@gmail.com']
 			#Если пользователь захотел получить копию себе, добавляем его в список получателей
 			if copy:
 				recipients.append(sender)
 			try:
-				send_mail([subject, subject1, subject2], message, 'vanguar@ukr.net', recipients)
+				send_mail([subject, subject1, subject2, sender], message, 'tzvanguardia@gmail.com', recipients)
 			except BadHeaderError: #Защита от уязвимости
 				return HttpResponse('Invalid header found')
 			#Переходим на другую страницу, если сообщение отправлено

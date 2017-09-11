@@ -1,0 +1,76 @@
+{% extends 'oilstandart/base.html' %}
+
+
+
+
+{% block content %} 
+<div class="content container">
+    <div class="row centered">
+    <div class="col-md-12">
+           <span class="tiltFont3"><b>Наши сертификаты</b></span>
+    </div>
+	    
+		      <!--<span class="tiltFont2">
+								    Бесперебойная работа техники напрямую зависит от качества используемого топлива и надежности поставщика. 
+			  </span><br>-->
+	
+     </div>
+</div>   
+<hr class="style-two"></hr>                					
+	
+<div class="content container">
+    <div class="row">
+	    <div class="col-md-12">
+<!-- Хлебные крошки, начало! -->	
+<ol id="breadcrumb">
+  <li>
+    <a href="{% url 'indexoil' %}"><i class="glyphicon glyphicon-home"></i>
+    <span class="sr-only"></span></a>
+  </li>
+  <li class="current">
+    <a href="{% url 'certificates' %}">Сертификаты</a>
+  </li>
+</ol>
+<!-- Хлебные крошки, конец! -->
+<br><br>
+<div class="content container">
+    <div class="row centered">
+        
+    <br>
+  <div class="col-lg-3">
+     <div class="">
+     <h4>Сертификат АИ-92-К5-Евро</h4>
+         <a href="/static/img/Sert_2.png"><img src="/static/img/Sert_2.png" alt="Сертификат" class="img-responsive img-thumbnail"></a>
+     </div> 
+  </div>  
+  <div class="col-lg-3">
+     <div class="">
+     <h4>Сертификат АИ-92-К5-Евро</h4>
+        <a href="/static/img/Sert_3.png"><img src="/static/img/Sert_3.png" alt="Сертификат" class="img-responsive img-thumbnail"></a>
+     </div> 
+  </div>
+  <div class="col-lg-3">
+     <div class="">
+     <h4>Сертифікат ДТ-Л-К5</h4>
+        <a href="/static/img/Sert_4.png"><img src="/static/img/Sert_4.png" alt="Сертификат" class="img-responsive img-thumbnail"></a>
+     </div> 
+  </div>
+  <div class="col-lg-3">
+     <div class="">
+     <h4>Сертификат газ СПБТ (PN EN) д</h4>
+         <a href="/static/img/Sert_1.png"><img src="/static/img/Sert_1.png" alt="Сертификат" class="img-responsive img-thumbnail"></a>
+     </div> 
+  </div>
+  
+</div>
+</div>
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+{% endblock content %}

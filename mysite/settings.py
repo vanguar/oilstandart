@@ -110,3 +110,7 @@ EMAIL_HOST_PASSWORD = 'vovusiklenusik'
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 DEFAULT_FROM_EMAIL = 'tzvanguardia@gmail.com'
+
+FILE_CHARSET='utf-8'
+
+DEFAULT_CHARSET='utf-8'

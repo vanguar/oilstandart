@@ -11,12 +11,12 @@ $name = $_POST['name'];
 $phone = $_POST['phone'];
 
 // create email body and send it 
-$to = 'vanguar@ukr.net'; // put your email
+$to = 'tzvanguardia@gmail.com'; // put your email
 $email_subject = "Вам отправлена форма - Перезвоните мне: $name";
 $email_body = "Заполнена форма \"Перезвоните мне\". \n\n".
  "Данные отправителя:\n\nИмя: $name \n".
  "Телефон: $phone";
-$headers = "From: vanguar@ukr.net\n";
+$headers = "From: tzvanguardia@gmail.com\n";
 $headers .= "Reply-To:"; 
 mail($to,$email_subject,$email_body,$headers);
 return true; 

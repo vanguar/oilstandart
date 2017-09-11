@@ -13,21 +13,24 @@
 </head>
 <body>
 <div class="wrapper">
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="containernav">
-            
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="containernav">
+    <nav class="navbar navbar-inverse navbar-static-top navbar-top">
+        <a class="navbar-brand" href="{% url 'indexoil' %}"><i class="fa fa-tint logo" aria-hidden="true">
+				&nbsp;БАРРЕЛЬ-УКРАИНА</i></a></nav>
+				<hr style="height:1px;border:none;color:#808080;background-color:#808080;" />
+    </nav>  
 	    <div class="navbar-header">
 		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 			    <span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="{% url 'indexoil' %}"><i class="fa fa-tint logo" aria-hidden="true">
-				    &nbsp;{{ company_name|upper }}</i></a></nav>
+			
 			    
 		</div>
 		    <div class="navbar-collapse collapse right">
-			    <ul class="nav navbar-nav navbar-right">
+			    <ul class="nav navbar-nav navbar-left">
 				   				
 					<!--<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">О компании<span class="caret"></span></a>
 					    <ul class="dropdown-menu" role="menu">
@@ -115,27 +118,29 @@
 						     <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Паспорт качества-АИ</a></li>							
 					    </ul>
 					</li>-->
-					
-					{% url 'indexoil' as url %}
-				    <li {% if request.path == url %}class = "active"{% endif %}><a class="glyphicon glyphicon-home glyphicon-position" href="{{url}}"></a></li>
+					{% url 'contacts' as url %}
+				    <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Главная</a></li>
 					</li>
-					{% url 'dieselfuel' as url %}
+					{% url 'contacts' as url %}
 				    <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Дизтопливо/Бензин</a></li>
 					</li>
-					{% url 'rent' as url %}
+					{% url 'contacts' as url %}
+				    <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Продажа и доставка</a></li>
+					</li>
+					{% url 'contacts' as url %}
 				    <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Аренда</a></li>
 					</li>
-					{% url 'gasfilling' as url %}
+					{% url 'contacts' as url %}
 				    <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Газовые заправки</a></li>
 					</li>
-					{% url 'realization' as url %}
+					{% url 'contacts' as url %}
 				    <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Реализация газа</a></li>
 					</li>
-					{% url 'certificates' as url %}
+					{% url 'contacts' as url %}
 				    <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Сертификаты</a></li>
 					</li>
 					{% url 'contacts' as url %}
-				    <li {% if request.path == url %}class = "active"{% endif %}><a class="glyphicon glyphicon-envelope glyphicon-position" href="{{url}}"></a></li>
+				    <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Контакты</a></li>
 					</li>
 				</ul>
 			
@@ -143,11 +148,10 @@
     </div>
 </div>	
 <!-- Модальное окно. Начало -->
-            <div class="phone-position color-phone"><span class="color-097">+38 (097)</span> 068-40-77</div>
-            <button type="button" class="position-menu btn btn-success btn-lg top-menu" data-toggle="modal" data-target="#myModal">
-                <i class="glyphicon glyphicon-phone-alt" aria-hidden="true"></i>&nbsp;<span class="">Обратный звонок</span>
-            </button>
-
+<button type="button" class="position-menu btn btn-success btn-lg top-menu" data-toggle="modal" data-target="#myModal">
+    <i class="glyphicon glyphicon-phone-alt" aria-hidden="true"></i>&nbsp;<span class="">Обратный звонок</span>
+</button>
+ 
 
     <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -198,7 +202,7 @@
 			<div class="footer-inner">
 		
 		
-					   <!-- <div class="row centered">
+					    <div class="row centered">
 						    <div class="col-lg-3 col-sm-3 fontcenter">
 		                        <i>О компании:</i><br>
 					   
@@ -256,7 +260,7 @@
 					 <br>
 		                    </div> 							
 		                </div>
-						<hr class="style-one"></hr>-->
+						<hr class="style-one"></hr>
 		
 		<div class="container">
 					    <div class="row centered">
@@ -290,7 +294,7 @@
 				 <hr class="style-one"></hr>
                   <div class="row centered">		
 						<div class="col-lg-4">
-		                         <em>{{ company_name|upper }}</em> 
+		                         <em>ооо "Баррель-Украина"</em> 
 		                </div>
 						<div class="col-lg-4">
 						</div>

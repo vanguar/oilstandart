@@ -4,12 +4,10 @@
 
 
 {% block content %} 
-
                 <div id="headerwrap">
 				    <div class="container">
-
 					    <div class="row centered">
-						     <div class="col-lg-8 col-lg-offset-2 fontLanding Landing-position">
+						     <div class="col-lg-8 col-lg-offset-2 fontLanding">
 							     <h2>
 								    {{ company_name|upper }} – продажа и доставка топлива по всей территории украины 
 								 </h2>
@@ -17,78 +15,40 @@
 								    Высочайшее качество по доступной цене!!!<br> 
 									Минимализируйте Ваши расходы и экономьте вместе с нами! 
 								 </h3>
-								 
 								 <!--<h3>
 								     <b>"OILSTANDART"</b> - это комманда молодых профессоналов в сфере трудоустройства за рубежом. 
 									 Мы сотрудничаем только с проверенными и надёжными работодателями стран Европейского союза.
 								 </h3> -->
 							 </div>
-						</div>
-                        
-						<div class="row centered Box-position">
-						    
-						    <div class="col-lg-8 col-lg-offset-4 Landing-position">
-						    {% for item in price_oil %}
-						        <div class="Box">На <b class="color-data">{{ item.published_date }}</b> стоимость ДТ составляет <b class="color-price">{{ item.price|upper }} ГРН</b> за литр.<br><br>
-                                    <button type="button" class="btn btn-lg btn-success btn-position"><span class = "glyphicon glyphicon-shopping-cart glyphicon-type"></span><a href="{% url 'contactView' %}">Сделать заказ</a></button>
-						        </div>	
-						    {% endfor %}    
-						    </div>
-						    
-						</div> 
-                    
+						</div>					    
 					</div>
 				
 				</div>
-
-				<div class="container wb">
-				    <div class="row centered">
-					    <br><br>
-						<div class="col-lg-12">
-							<span class="tiltFont4"><b>{{ company_name|upper }}</b></span><br>
-<span class="tiltFont5">Основным направлением деятельности компании <b>{{ company_name|upper }}</b> является продажа, доставка дизельного топлива и налив на вашей территории, непосредственно в баки автомобилей. На сегодняшний день мы предлагаем самый широчайший ассортимент продукции, включающий самое лучшее зимнее и летнее дизельное топливо, бензины А-92, А-95, сжиженный газ. Наша фирма завоевывала доверие со стороны покупателей на протяжении достаточно длительного времени, а потому мы очень дорожим репутацией и просто не можем позволить доставлять клиентам некачественное дизтопливо. Именно этот экологически чистый продукт необходимо использовать в черте г. Киева и обл, а так же при заправке импортных генераторов, большегрузных автомобилей или для отопления коттеджей. Наша компанния <b>{{ company_name|upper }}</b> осуществит доставку качественного дизельного топлива, что минимизирует износ двигателя вашего транспорта или топливной системы.<br><br>
-Если вы желаете приобрести дизельное топливо оптом или другое топливо, мы с радостью придем на помощь. Наша компания <b>{{ company_name|upper }}</b> на высоком профессиональном уровне осуществляет такие услуги, как продажа и доставка топлива. Работа с клиентами на взаимовыгодных условиях, обеспечение потребителя стабильностью оптовых поставок, высокое качество топлива и низкие цены – наши главные преимущества. Продажа топлива осуществляется оптом от 200 л.<br><br>
-Доставка топлива оптом, бензина и других нефтепродуктов в соответствии с паспортом качества (ГОСТ) будет осуществлена в срок.<br><br>
-Для повышения качества обслуживания мы сдаем в аренду, устанавливаем мобильные и стационарные топливозаправочные модули. Обеспечиваем дежурство автозаправщиков на территории предприятий. Одним из направлений развития компании является финансирование проектов по модернизации и оснащению объектов и складов ГСМ стационарным или мобильным топливозаправочным оборудованием.<br><br>
-<b>Продажа, доставка и налив топлива от {{ company_name|upper }}</b><br><br>
-Наша задача заключается в бесперебойной доставке дизельного топлива в любое время суток до заказчика. Нашими клиентами являются не только крупные организации, имеющие возможность держать в запасе дизтопливо в емкостях от 40 000 л., но и небольшие организации, владеющие небольшим автопарком, который необходимо заправлять ежедневно. Так же владельцы загородной недвижимости используют топливо для отопления коттеджей и частных домов. <br><br>
-<span class="tilt-center"><b>Надеемся на взаимовыгодное и долгосрочное сотрудничество!<br>
-Пусть вам всегда сопутствует успех! &#9749;
-</span><br><br>
-						</div>
-					</div>
-				</div>	
-
 				
 				<div id="dg">
 				    <div class="container">
 					    <div class="row centered">
-						    <div class="col-lg-12">
-						    <span class="tiltFont3"><b>Ведущая компания на рынке продажи и доставки светлых нефтепродуктов
-                             бензовозами и топливозаправщиками на территории Киева и Киевской области</b></span><br><br><br>
-				        </div>
+						    
 						    <br>
 							<div class="col-lg-4">
 							   <div class="tilt">
-							       <a href="{% url 'dieselfuel' %}"><img src="/static/icons/1.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail"></a>
+							       <a href="#"><img src="/static/icons/1.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail"></a>
 							       <span class="tiltFont1">Продажа топлива</span>
-								   <span class="tiltFont2">Продажа и доставка топлива.</span>
+								   <span class="tiltFont2">Аренда топливных емкостей различного объема.</span>
 							   </div> 
 							</div>
 							<div class="col-lg-4">
 							   <div class="tilt">
-							       <a href="{% url 'dieselfuel' %}"><img src="/static/icons/2.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail"></a>
+							       <a href="#"><img src="/static/icons/2.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail"></a>
 							       <span class="tiltFont1">Перевозка топлива</span>
-								   <span class="tiltFont2">Транспортировка дизельного топлива
-                                   любых объемов на территории Киева.</span>
+								   <span class="tiltFont2">Аренда топливных емкостей различного объема.</span>
 							   </div> 
 							</div>
 							<div class="col-lg-4">
 							   <div class="tilt">
-							       <a href="{% url 'techwork' %}"><img src="/static/icons/3.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail"></a>
+							       <a href="#"><img src="/static/icons/3.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail"></a>
 							       <span class="tiltFont1">Откачка топлива</span>
-								   <span class="tiltFont2">Откачка топлива из резервуаров,
-                                   промывка и утилизация топлива.</span>
+								   <span class="tiltFont2">Аренда топливных емкостей различного объема.</span>
 							   </div> 
 							</div>
 							
@@ -98,24 +58,23 @@
 						    <br>
 							<div class="col-lg-4">
 							   <div class="tilt">
-							       <a href="{% url 'rent' %}"><img src="/static/icons/4.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail"></a>
-							       <span class="tiltFont1">Аренда мини АЗС</span>
-								   <span class="tiltFont2">Аренда Мини АЗС от 1000 до 50000 литров.</span>
+							       <a href="#"><img src="/static/icons/4.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail"></a>
+							       <span class="tiltFont1">Аренда бензовозов</span>
+								   <span class="tiltFont2">Аренда топливных емкостей различного объема.</span>
 							   </div> 
 							</div>
 							<div class="col-lg-4">
 							   <div class="tilt">
-							       <a href="{% url 'techwork' %}"><img src="/static/icons/5.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail"></a>
+							       <a href="#"><img src="/static/icons/5.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail"></a>
 							       <span class="tiltFont1">Утилизация топлива</span>
-								   <span class="tiltFont2">Откачка нефтепродукта плохого качества с
-                                   последующей очисткой резервуара.</span>
+								   <span class="tiltFont2">Аренда топливных емкостей различного объема.</span>
 							   </div> 
 							</div>
 							<div class="col-lg-4">
 							   <div class="tilt">
-							       <a href="{% url 'realization' %}"><img src="/static/icons/6.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail"></a>
-							       <span class="tiltFont1">Реализация газа</span>
-								   <span class="tiltFont2">Оптовая реализация сжиженного газа.</span>
+							       <a href="#"><img src="/static/icons/6.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail"></a>
+							       <span class="tiltFont1">Аренда емкостей</span>
+								   <span class="tiltFont2">Аренда топливных емкостей различного объема.</span>
 							   </div> 
 							</div>
 							
@@ -248,30 +207,30 @@
 						    <br>
 							<div class="col-lg-3">
 							   <div class="tilt">
-							       <a href="{% url 'techwork' %}"><img src="/static/icons/7.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail img-circle"></a>
-							       <span class="tiltFont1">Котеджи</span>
-								   
+							       <a href="#"><img src="/static/icons/7.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail img-circle"></a>
+							       <span class="tiltFont1">Продажа топлива</span>
+								   <span class="tiltFont2">Аренда топливных емкостей различного объема.</span>
 							   </div> 
 							</div>
 							<div class="col-lg-3">
 							   <div class="tilt">
-							       <a href="{% url 'techwork' %}"><img src="/static/icons/8.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail img-circle"></a>
-							       <span class="tiltFont1">Генераторы</span>
-								   
+							       <a href="#"><img src="/static/icons/8.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail img-circle"></a>
+							       <span class="tiltFont1">Перевозка топлива</span>
+								   <span class="tiltFont2">Аренда топливных емкостей различного объема.</span>
 							   </div> 
 							</div>
 							<div class="col-lg-3">
 							   <div class="tilt">
-							       <a href="{% url 'techwork' %}"><img src="/static/icons/9.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail img-circle"></a>
-							       <span class="tiltFont1">Склады</span>
-								   
+							       <a href="#"><img src="/static/icons/9.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail img-circle"></a>
+							       <span class="tiltFont1">Откачка топлива</span>
+								   <span class="tiltFont2">Аренда топливных емкостей различного объема.</span>
 							   </div> 
 							</div>
 							<div class="col-lg-3">
 							   <div class="tilt">
-							       <a href="{% url 'techwork' %}"><img src="/static/icons/10.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail img-circle"></a>
-							       <span class="tiltFont1">Котельные</span>
-								   
+							       <a href="#"><img src="/static/icons/10.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail img-circle"></a>
+							       <span class="tiltFont1">Откачка топлива</span>
+								   <span class="tiltFont2">Аренда топливных емкостей различного объема.</span>
 							   </div> 
 							</div>
 							
@@ -282,30 +241,30 @@
 						    <br>
 							<div class="col-lg-3">
 							   <div class="tilt">
-							       <a href="{% url 'techwork' %}"><img src="/static/icons/11.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail img-circle"></a>
-							       <span class="tiltFont1">Строительство</span>
-								   
+							       <a href="#"><img src="/static/icons/11.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail img-circle"></a>
+							       <span class="tiltFont1">Аренда бензовозов</span>
+								   <span class="tiltFont2">Аренда топливных емкостей различного объема.</span>
 							   </div> 
 							</div>
 							<div class="col-lg-3">
 							   <div class="tilt">
-							       <a href="{% url 'techwork' %}"><img src="/static/icons/12.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail img-circle"></a>
-							       <span class="tiltFont1">Водный транспорт</span>
-								   
+							       <a href="#"><img src="/static/icons/12.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail img-circle"></a>
+							       <span class="tiltFont1">Утилизация топлива</span>
+								   <span class="tiltFont2">Аренда топливных емкостей различного объема.</span>
 							   </div> 
 							</div>
 							<div class="col-lg-3">
 							   <div class="tilt">
-							       <a href="{% url 'techwork' %}"><img src="/static/icons/13.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail img-circle"></a>
-							       <span class="tiltFont1">Транспорт</span>
-								   
+							       <a href="#"><img src="/static/icons/13.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail img-circle"></a>
+							       <span class="tiltFont1">Аренда емкостей</span>
+								   <span class="tiltFont2">Аренда топливных емкостей различного объема.</span>
 							   </div> 
 							</div>
 							<div class="col-lg-3">
 							   <div class="tilt">
-							       <a href="{% url 'techwork' %}"><img src="/static/icons/14.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail img-circle"></a>
-							       <span class="tiltFont1">Автосервисы</span>
-								   
+							       <a href="#"><img src="/static/icons/14.png" alt="Последние новости в Польше" class="img-responsive img-thumbnail img-circle"></a>
+							       <span class="tiltFont1">Откачка топлива</span>
+								   <span class="tiltFont2">Аренда топливных емкостей различного объема.</span>
 							   </div> 
 							</div>
 							
@@ -394,7 +353,7 @@
  сложности, которые возникают во время доставки.</li>
 </ol><br>
 <em><b>{{ company_name|upper }}</b> — это выгодные условия сотрудничества для бизнеса любых размеров. Все дизтопливо оптом (мелким и крупным) продается с 
-паспортами соответствия. Телефон для связи: <b>+38 (097)068-40-77.</b></em>
+паспортами соответствия. Телефон для связи: <b>+3 (8099) 999-93-93.</b></em>
 </span><br>
 
 
@@ -407,7 +366,7 @@
 							    <h4>Заказ топлива</h4>
 								<p>
 								    Для того чтобы сделать заказ, необходимо перейти на страницу с формой заказа, нажав на зелёную кнопку:<br>
-									<div class="col-lg-12"><button type="button" class="btn btn-success postresume btn-lg"><span class="buttall"><span class = "glyphicon glyphicon-shopping-cart glyphicon-type"></span><a href="{% url 'contactView' %}">Сделать заказ</a></span></button><br></div><br>
+									<div class="col-lg-12"><button type="button" class="btn btn-success postresume btn-lg"><span class="buttall"><a href="{% url 'contactView' %}">Сделать заказ</a></span></button><br></div><br>
 								</p>
                                 
 							</div>
