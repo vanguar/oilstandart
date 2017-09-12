@@ -768,7 +768,7 @@ color: blue;
  .position-menu {
 position: absolute;
 display: block;
-top: 50px;
+top: 25px;
 right: 30px;
 }
 .phone-position {
@@ -949,18 +949,13 @@ padding-top: 100px;
 }
 .background-picture {
 background: url(../img/propan.png) no-repeat center top;
-margin-top: -20px;
-padding-top: 250px;
-text-align: center;
-background-attachment: relative;
-background-position: center center;
-min-height: 200px;
 width: 100%;
 background-size: 100%;
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
+margin-bottom: -20px;
 } 
 .container {
 display: block;
