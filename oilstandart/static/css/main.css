@@ -74,7 +74,7 @@ h1 a {
 	.fontLanding h1, .fontLanding h2, .fontLanding h3, .fontLanding h4 {
 	 font-family: Raleway, Verdana, Helvetica, Arial, sans-serif;
      background: black;
-     padding: 10px;
+     padding: 10px 50px 10px 50px;
      opacity: 0.7;
      filter: alpha(opacity=70);
     -moz-opacity:0.7;
@@ -772,16 +772,17 @@ top: 50px;
 right: 30px;
 }
 .phone-position {
-position: absolute;
-top: -80px;
-right: 160px;
+top: 10px;
+left: 10px;
+padding-right: 60px;
+font-size: 18px;
 }
 .color-phone {
 color: white;
 }
 
 .color-097 {
-color: #7CFC00;
+color: #DAA520;
 }
 .footerColorSize {
 color: green;
@@ -966,8 +967,4 @@ display: block;
 }
 .Box-position {
 margin-top: 50px;
-}
-.phone-position {
-position: absolute;
-margin-top: 100px;
 }

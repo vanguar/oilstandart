@@ -16,7 +16,7 @@ def contacts(reguest):
     return render(reguest, 'oilstandart/contacts.html', {'company_name': company_name})
 
 def certificates(reguest): 
-    return render(reguest, 'oilstandart/certificates.html',)        
+    return render(reguest, 'oilstandart/certificates.html', {'company_name': company_name})        
 
 def dieselfuel(reguest): 
      return render(reguest, 'oilstandart/dieselfuel.html', {'company_name': company_name})

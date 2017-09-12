@@ -136,6 +136,8 @@
 					</li>
 					{% url 'contacts' as url %}
 				    <li {% if request.path == url %}class = "active"{% endif %}><a class="glyphicon glyphicon-envelope glyphicon-position" href="{{url}}"></a></li>
+				    <li class="color-phone phone-position"><span class="color-097">+38 (097)</span> 068-40-77</li>
+					</li>
 					</li>
 				</ul>
 			
@@ -143,7 +145,7 @@
     </div>
 </div>	
 <!-- Модальное окно. Начало -->
-            <div class="phone-position color-phone"><span class="color-097">+38 (097)</span> 068-40-77</div>
+           
             <button type="button" class="position-menu btn btn-success btn-lg top-menu" data-toggle="modal" data-target="#myModal">
                 <i class="glyphicon glyphicon-phone-alt" aria-hidden="true"></i>&nbsp;<span class="">Обратный звонок</span>
             </button>
