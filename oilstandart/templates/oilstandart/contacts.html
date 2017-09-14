@@ -5,9 +5,94 @@
 
 {% block content %} 
 
+<div class="container wb">
+				    <div class="row centered">
+					    <br><br>
+						<div class="col-lg-12">
+						    <span class="tiltFont3"><i class="fa fa-envelope-open" aria-hidden="true"></i></i> Контакты</span>
+							    <p>
+								    <div class="panel-group" id="collapse-group">
+ <div class="panel panel-default-contacts">
+ <div class="panel-heading">
+ <h4 class="panel-title-contacts">
+ <a data-toggle="collapse" data-parent="#collapse-group" href="#el1"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+ </h4>
+ </div>
+ <div id="el1" class="panel-collapse collapse in">
+ <div class="panel-body-contact-contacts"><b class="title-contact">Адрес</b><br>
+ <hr>
+ {% for contact in contacts %}{{ contact.address }}{% endfor %}
+ </div>
+ </div>
+ </div>
+ <div class="panel panel-default-contacts">
+ <div class="panel-heading">
+ <h4 class="panel-title-contacts">
+ <a data-toggle="collapse" data-parent="#collapse-group" href="#el2"><i class="fa fa-phone-square" aria-hidden="true"></i></a>
+ </h4>
+ </div>
+ <div id="el2" class="panel-collapse collapse">
+ <div class="panel-body-contact-contacts"><b class="title-contact">Наши телефоны</b><br>
+ <hr>
+{% if contacts.phone_1 %}
+{% endif %}{% for contact in contacts %}{{ contact.phone_1 }}{% endfor %}<br>
+{% if contacts.phone_2 %}
+{% endif %}{% for contact in contacts %}{{ contact.phone_2 }}{% endfor %}<br>
+{% if contacts.phone_3 %}
+{% for contact in contacts %}{{ contact.phone_3 }}{% endfor %}
+{% endif %}{% for contact in contacts %}{{ contact.phone_3 }}{% endfor %}<br>
+ </div>
+ </div>
+ </div>
+ <div class="panel panel-default-contacts">
+ <div class="panel-heading">
+ <h4 class="panel-title-contacts">
+ <a data-toggle="collapse" data-parent="#collapse-group" href="#el5"><i class="fa fa-envelope-open" aria-hidden="true"></i></a>
+ </h4>
+ </div>
+ <div id="el5" class="panel-collapse collapse">
+ <div class="panel-body-contact-contacts"><b class="title-contact">e-mail</b><br>
+ <hr>
+{% if contacts.mail_1 %}
+{% endif %}{% for contact in contacts %}{{ contact.mail_1 }}{% endfor %}<br>
+{% if contacts.mail_2 %}
+{% endif %}{% for contact in contacts %}{{ contact.mail_2 }}{% endfor %}<br>
+{% if contacts.mail_3 %}
+{% for contact in contacts %}{{ contact.phone_3 }}{% endfor %}
+{% endif %}{% for contact in contacts %}{{ contact.mail_3 }}{% endfor %}<br>
+ </div>
+ </div>
+ </div>
+ <div class="panel panel-default-contacts">
+ <div class="panel-heading">
+ <h4 class="panel-title-contacts">
+ <a data-toggle="collapse" data-parent="#collapse-group" href="#el3"><i class="fa fa-clock-o" aria-hidden="true"></i></a>
+ </h4>
+ </div>
+ <div id="el3" class="panel-collapse collapse">
+ <div class="panel-body-contact-contacts"><b class="title-contact">Время работы</b><br>
+ <hr>
+ {% for contact in contacts %}{{ contact.Working_hours }}{% endfor %}</div>
+ </div>
+ </div>
+ <div class="panel panel-default-contacts">
+ <div class="panel-heading">
+ <h4 class="panel-title-contacts">
+ <a data-toggle="collapse" data-parent="#collapse-group" href="#el4"><i class="fa fa-map-o" aria-hidden="true"></i></a>
+ </h4>
+ </div>
+ <div id="el4" class="panel-collapse collapse">
+ <div class="panel-body-contact-contacts"><b class="title-contact">Мы на карте</b><br>
+ <hr>
+###</div>
+ </div>
+ </div>
+ </div>  
+</div>
+</div>
+ </p>
+</div>
 
-    <p>Hi there!</p>
-    <p>It works!</p>
-
+<br>
 
 {% endblock content %}

@@ -5,36 +5,45 @@ from django import *
 from .models import *
 from django.http import Http404
 
-company_name = "ООО “Баррель-Украина”"
+price_oil = PriceAndCompany.objects.filter(published_date__lte=timezone.now())
+contacts = Contacts.objects.all()
 
 
 def indexoil(reguest):
-    price_oil = Price.objects.filter(published_date__lte=timezone.now())
-    return render(reguest, 'oilstandart/indexoil.html', {'company_name': company_name, 'price_oil': price_oil})
+    contacts = Contacts.objects.all()
+    return render(reguest, 'oilstandart/indexoil.html', {'price_oil': price_oil, 'contacts': contacts})
 
-def contacts(reguest): 
-    return render(reguest, 'oilstandart/contacts.html', {'company_name': company_name})
+def contacts(reguest):
+    contacts = Contacts.objects.all()
+    return render(reguest, 'oilstandart/contacts.html', {'price_oil': price_oil, 'contacts': contacts})
 
-def certificates(reguest): 
-    return render(reguest, 'oilstandart/certificates.html', {'company_name': company_name})        
+def certificates(reguest):
+    contacts = Contacts.objects.all()
+    return render(reguest, 'oilstandart/certificates.html', {'price_oil': price_oil, 'contacts': contacts})        
 
-def dieselfuel(reguest): 
-     return render(reguest, 'oilstandart/dieselfuel.html', {'company_name': company_name})
-
+def dieselfuel(reguest):
+    contacts = Contacts.objects.all()
+    return render(reguest, 'oilstandart/dieselfuel.html', {'price_oil': price_oil, 'contacts': contacts})
+     
 def rent(reguest): 
-     return render(reguest, 'oilstandart/rent.html', {'company_name': company_name}) 
+    contacts = Contacts.objects.all()
+    return render(reguest, 'oilstandart/rent.html', {'price_oil': price_oil, 'contacts': contacts}) 
 
-def gasfilling(reguest): 
-     return render(reguest, 'oilstandart/gasfilling.html', {'company_name': company_name})  
+def gasfilling(reguest):
+    contacts = Contacts.objects.all() 
+    return render(reguest, 'oilstandart/gasfilling.html', {'price_oil': price_oil, 'contacts': contacts})  
 
-def realization(reguest): 
-     return render(reguest, 'oilstandart/realization.html', {'company_name': company_name})
+def realization(reguest):
+    contacts = Contacts.objects.all()
+    return render(reguest, 'oilstandart/realization.html', {'price_oil': price_oil, 'contacts': contacts})
 
-def techwork(reguest): 
-     return render(reguest, 'oilstandart/techwork.html', {'company_name': company_name})
+def techwork(reguest):
+    contacts = Contacts.objects.all() 
+    return render(reguest, 'oilstandart/techwork.html', {'price_oil': price_oil, 'contacts': contacts})
              
 def contactView(reguest): 
-     return render(reguest, 'oilstandart/contactView.html', {'company_name': company_name})
+    contacts = Contacts.objects.all()
+    return render(reguest, 'oilstandart/contactView.html', {'price_oil': price_oil, 'contacts': contacts})
 
 # def fonnumber(reguest): 
 #     return render(reguest, 'oilstandart/fonnumber.html')

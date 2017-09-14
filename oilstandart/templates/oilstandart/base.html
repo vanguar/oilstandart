@@ -23,7 +23,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="{% url 'indexoil' %}"><i class="fa fa-tint logo" aria-hidden="true">
-				    &nbsp;{{ company_name|upper }}</i></a></nav>
+				    &nbsp;{% for item in price_oil %}{{ item.company|upper }}{% endfor %}</i></a></nav>
 			    
 		</div>
 		    <div class="navbar-collapse collapse right">
@@ -136,7 +136,7 @@
 					</li>
 					{% url 'contacts' as url %}
 				    <li {% if request.path == url %}class = "active"{% endif %}><a class="glyphicon glyphicon-envelope glyphicon-position" href="{{url}}"></a></li>
-				    <li class="color-phone phone-position"><span class="color-097">+38 (097)</span> 068-40-77</li>
+				    <li class="color-phone phone-position"><span class="color-097">{% for contact in contacts %}{{ contact.phone_1|truncatewords:"7" }}{% endfor %}</span></li>
 					</li>
 					</li>
 				</ul>
@@ -264,8 +264,8 @@
 					    <div class="row centered">
 						    <div class="col-lg-3 contactLeft">
 		                        <i class="fa fa-handshake-o" aria-hidden="true">&nbsp;Предложения для сотрудничества:<br><br></i>
-								<em class="wfoo">&#9993; oil@gmail.com<br>
-								&#9742; 097-068-40-77</em>
+								<em class="wfoo">&#9993; {% for contact in contacts %}{{ contact.mail_1 }}{% endfor %}<br>
+								&#9742; {% for contact in contacts %}{{ contact.phone_1 }}{% endfor %}</em>
 							
 		                    </div>
 							<div class="col-lg-3">
@@ -277,7 +277,7 @@
                             <div class="col-lg-3 contactLeft">
 							    
 							  <i class="fa fa-envelope-open-o" aria-hidden="true">&nbsp;Юридический адрес:<br><br></i>
-                              <em class="wfoo">&#9745; г.Киев, Ул. Предславенская 41, офис 107</em>
+                              <em class="wfoo">&#9745; {% for contact in contacts %}{{ contact.address }}{% endfor %}</em>
 								
 		                    </div>
 
@@ -292,7 +292,7 @@
 				 <hr class="style-one"></hr>
                   <div class="row centered">		
 						<div class="col-lg-4">
-		                         <em>{{ company_name|upper }}</em> 
+		                         <em>{% for item in price_oil %}{{ item.company|upper }}{% endfor %}</em> 
 		                </div>
 						<div class="col-lg-4">
 						</div>

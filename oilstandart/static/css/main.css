@@ -895,12 +895,40 @@ text-align: left;
 font-family: sans-serif;
 font-size: 20px;
 }
+.panel-title-contacts a {
+color: gray;
+display: block;
+text-align: left;
+font-family: sans-serif;
+font-size: 30px;
+}
+.panel-title-contacts a:active {
+color: red;
+}
+.panel-default-contacts {
+outline: 2px solid #BEBEBE; /* Чёрная рамка */
+background: #F8F8FF;
+}
+.panel-body-contact-contacts {
+background: #F5F5F5;
+font-size: 24px;
+text-align: center;
+}
 
 .panel-title a:active {
 color: red;
 }
 .panel-body {
 font-size: 18px;
+}
+.panel-body-contact {
+font-size: 24px;
+text-align: center;
+color: gray;
+}
+.title-contact {
+font-size: 28px;
+color: black;
 }
 .logo {
 color: #C0C0C0;
@@ -909,10 +937,15 @@ color: #C0C0C0;
 top: 0px;
 }
 .Landing-position {
+position: relative;
 top: -130px;
 }
+.Current-price-position-position {
+position: relative;
+top: -190px;
+}
 .Box {
-        position: absolute;
+        margin: 0 auto;
         width:260px;
         height: 185px;
         background-color: none;
@@ -961,5 +994,8 @@ margin-bottom: -20px;
 display: block;
 }
 .Box-position {
-margin-top: 50px;
+display: block;
+position: absolute;
+margin-top: 0px;
+padding: 0 auto;
 }
